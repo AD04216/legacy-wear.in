@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Legacy Wear K.P.D — Timeless Style. Lasting Legacy.</title>
+  <link rel="icon" type="image/jpeg" href="legacywear.jpeg" />
+  <!-- Google Fonts: Plus Jakarta Sans & Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="store-shell">
+    <!-- TOP HEADER -->
+    <header class="top-header">
+      <div class="header-left-group">
+        <button class="menu-square" id="menuBtn" title="Track Orders & Account">
+          <span class="hamburger-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="menu-label-text">Track Orders</span>
+          <span class="notification-dot hidden" id="myOrdersDot"></span>
+        </button>
+
+        <!-- LUXURY GOLD LEGACY WEAR K.P.D LOGO -->
+        <a href="#" class="brand-logo" onclick="resetAllFilters(); return false;">
+          <div class="lw-gold-emblem">
+            <img
+              src="legacywear.jpeg"
+              alt="Legacy Wear K.P.D Logo"
+              class="lw-logo-img"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <svg class="lw-logo-svg" viewBox="0 0 120 120" style="display:none;" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fff2b2" />
+                  <stop offset="35%" stop-color="#d4af37" />
+                  <stop offset="70%" stop-color="#aa7c11" />
+                  <stop offset="100%" stop-color="#f3e5ab" />
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="56" fill="#070709" stroke="url(#goldGrad)" stroke-width="3.5" />
+              <circle cx="60" cy="46" r="24" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.7" />
+              <text x="47" y="52" font-family="'Cinzel', serif" font-size="34" font-weight="800" fill="url(#goldGrad)" text-anchor="middle">L</text>
+              <text x="67" y="61" font-family="'Cinzel', serif" font-size="26" font-weight="800" fill="url(#goldGrad)" text-anchor="middle">W</text>
+              <text x="60" y="79" font-family="'Cinzel', serif" font-size="11" font-weight="700" fill="url(#goldGrad)" letter-spacing="3" text-anchor="middle">LEGACY</text>
+              <text x="60" y="89" font-family="'Cinzel', serif" font-size="7.5" font-weight="600" fill="url(#goldGrad)" letter-spacing="2.5" text-anchor="middle">— WEAR —</text>
+              <path d="M58 95 C58 93, 62 93, 61 96 L60 97 L50 103 L70 103 L60 97" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="brand-text-col">
+            <span class="brand-main">LEGACY WEAR <span class="kpd-badge">K.P.D</span></span>
+            <small class="brand-sub">TIMELESS STYLE. LASTING LEGACY.</small>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Status Pill -->
+      <div class="header-center">
+        <div class="live-Drop-pill">
+          <span class="pulse-green"></span> TIMELESS COLLECTION
+        </div>
+      </div>
+
+      <!-- Right User & Bag Actions -->
+      <div class="header-user-actions">
+        <button class="admin-pill hidden" id="adminHeaderBtn" title="Open Admin Control Desk">
+          ⚡ ADMIN DESK
+          <span class="notification-dot hidden" id="adminHeaderDot"></span>
+        </button>
+
+        <button class="user-pill" id="userBtn" title="Sign In / Account">
+          <span class="avatar-circle">👤</span>
+          <span id="userInitials">SIGN IN</span>
+        </button>
+
+        <button class="bag-square" id="bagBtn">
+          <span class="bag-num" id="bagCount">0</span>
+          <span class="bag-text">BAG</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- DASHBOARD PROMO BANNER CARDS -->
+    <section class="Command-banners">
+      <div class="promo-card promo-gold" onclick="document.getElementById('sortSelect').value='newest'; document.getElementById('sortSelect').dispatchEvent(new Event('change'));">
+        <div class="promo-3d-icon gold-emblem-mini">LW</div>
+        <div class="promo-content">
+          <span class="promo-tag">LEGACY WEAR K.P.D 📌</span>
+          <h3>Timeless Style Drops</h3>
+          <p>Heavyweight oversized fits &amp; signature embroidery.</p>
+        </div>
+      </div>
+
+      <div class="promo-card promo-purple" onclick="document.getElementById('ratingFilter').value='4'; document.getElementById('ratingFilter').dispatchEvent(new Event('change'));">
+        <div class="promo-3d-icon">★</div>
+        <div class="promo-content">
+          <span class="promo-tag">TOP RATED</span>
+          <h3>4.8★ Verified Quality</h3>
+          <p>Rated by real Legacy Wear community members.</p>
+        </div>
+      </div>
+
+      <div class="promo-card promo-coral" onclick="document.getElementById('menuBtn').click();">
+        <div class="promo-3d-icon">📦</div>
+        <div class="promo-content">
+          <span class="promo-tag">LIVE ORDER TRACKING</span>
+          <h3>Track Your Shipment</h3>
+          <p>Real-time updates from Confirmed to Doorstep Delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH & BREADCRUMB BAR -->
+    <section class="search-bar-row">
+      <div class="breadcrumb-box">
+        <span class="crumb-muted">legacy wear k.p.d /</span>
+        <span class="crumb-active" id="activeCategoryCrumb">All Drops</span>
+      </div>
+      <div class="search-input-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search shirts, hoodies, drops..."
+          autocomplete="off"
+        />
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT: LEFT SIDEBAR + PRODUCT GRID -->
+    <div class="main-body">
+      <aside class="left-sidebar">
+        <div class="sidebar-card">
+          <div class="sort-block">
+            <label class="sidebar-heading" for="sortSelect">SORT BY</label>
+            <div class="sort-select-wrap">
+              <select id="sortSelect">
+                <option value="newest">⚡ What's new</option>
+                <option value="rating">★ Top customer rating</option>
+                <option value="price-asc">₹ Price: Low to High</option>
+                <option value="price-desc">₹ Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-header-row">
+              <span class="sidebar-heading">FILTERS</span>
+              <button class="reset-link" id="resetFiltersBtn">Reset All</button>
+            </div>
+
+            <div class="filter-box">
+              <select id="categoryFilter">
+                <option value="all">Category: All Drops</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <select id="sizeFilter">
+                <option value="all">Size: All Sizes</option>
+                <option value="S">Size: S</option>
+                <option value="M">Size: M</option>
+                <option value="L">Size: L</option>
+                <option value="XL">Size: XL</option>
+                <option value="XXL">Size: XXL</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <select id="ratingFilter">
+                <option value="0">Rating: All</option>
+                <option value="4">4★ &amp; above</option>
+                <option value="3">3★ &amp; above</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <select id="priceFilter">
+                <option value="all">Price: Any Range</option>
+                <option value="under-699">Under ₹699</option>
+                <option value="700-999">₹700 – ₹999</option>
+                <option value="1000-plus">₹1000 &amp; above</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- PRODUCT GRID -->
+      <main class="product-grid" id="productGrid">
+        <div class="grid-status">Loading Legacy Wear collection...</div>
+      </main>
+    </div>
+  </div>
+
+  <!-- FULL-SCREEN IMAGE LIGHTBOX MODAL -->
+  <div class="lightbox-overlay hidden" id="lightboxModal">
+    <div class="lightbox-top-bar">
+      <div class="lightbox-meta">
+        <span id="lightboxTitle">Product Title</span>
+        <span class="lightbox-price" id="lightboxPrice">₹800</span>
+      </div>
+      <div class="lightbox-controls">
+        <button class="lb-btn" id="zoomToggleBtn" title="Zoom In/Out">🔍 Zoom</button>
+        <button class="lb-btn lb-close" id="closeLightboxBtn" title="Close">✕</button>
+      </div>
+    </div>
+
+    <div class="lightbox-stage">
+      <button class="lb-nav lb-prev" id="lbPrevBtn">‹</button>
+      <div class="lightbox-img-container" id="lightboxImgContainer">
+        <img id="lightboxMainImg" src="" alt="Full screen product view" />
+      </div>
+      <button class="lb-nav lb-next" id="lbNextBtn">›</button>
+    </div>
+
+    <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+  </div>
+
+  <!-- CUSTOMER REVIEWS & RATING MODAL -->
+  <div class="modal-backdrop hidden" id="reviewsModal">
+    <div class="modal-card reviews-modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-eyebrow">CUSTOMER FEEDBACK</span>
+          <h3 id="reviewModalProductTitle">Product Reviews</h3>
+        </div>
+        <button class="close-x" id="closeReviewsBtn">✕</button>
+      </div>
+
+      <div class="rating-summary-box">
+        <div class="rating-big-number" id="reviewModalAvgScore">5.0</div>
+        <div class="rating-stars-col">
+          <div class="stars-display" id="reviewModalStars">★★★★★</div>
+          <div class="rating-count-sub" id="reviewModalCount">Based on 1 review</div>
+        </div>
+      </div>
+
+      <form class="write-review-form" id="reviewForm">
+        <h4>Rate this piece</h4>
+        <div class="star-picker" id="starPicker">
+          <button type="button" data-star="1">★</button>
+          <button type="button" data-star="2">★</button>
+          <button type="button" data-star="3">★</button>
+          <button type="button" data-star="4">★</button>
+          <button type="button" data-star="5" class="active">★</button>
+          <span class="selected-star-label" id="selectedStarLabel">5 / 5 Stars</span>
+        </div>
+        <input type="text" id="reviewerNameInput" placeholder="Your name" required />
+        <textarea id="reviewCommentInput" rows="3" placeholder="Share how the fit, fabric, and embroidery look..." required></textarea>
+        <button type="submit" class="neon-cta-btn">Submit Review &amp; Rating</button>
+      </form>
+
+      <div class="reviews-list" id="reviewsListContainer"></div>
+    </div>
+  </div>
+
+  <!-- SHOPPING BAG & FLIPKART-STYLE CHECKOUT DRAWER -->
+  <div class="modal-backdrop hidden" id="bagModal">
+    <div class="drawer-card checkout-drawer-wide">
+      <div class="modal-header">
+        <div>
+          <span class="modal-eyebrow">LEGACY WEAR K.P.D CHECKOUT</span>
+          <h3>Shopping Bag &amp; Delivery Address</h3>
+        </div>
+        <button class="close-x" id="closeBagBtn">✕</button>
+      </div>
+
+      <div class="bag-items-list" id="bagItemsContainer"></div>
+
+      <div class="bag-footer" id="bagFooter">
+        <div class="bag-total-row">
+          <span>Total Payable</span>
+          <strong id="bagTotalPrice" style="color:#10b981;font-size:18px;">₹0</strong>
+        </div>
+
+        <!-- FLIPKART-STYLE STRUCTURED ADDRESS FORM -->
+        <form id="checkoutForm" class="fk-address-form">
+          <div class="fk-section-title">📍 DELIVERY ADDRESS DETAILS</div>
+
+          <div class="fk-grid-2">
+            <div class="fk-field">
+              <label>Full Name *</label>
+              <input type="text" id="custName" placeholder="Receiver's Full Name" required />
+            </div>
+            <div class="fk-field">
+              <label>10-Digit Mobile Number *</label>
+              <input type="tel" id="custPhone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" maxlength="10" required />
+            </div>
+          </div>
+
+          <div class="fk-grid-2">
+            <div class="fk-field">
+              <label>Pincode * <span id="pincodeLookupStatus" class="pin-status"></span></label>
+              <input type="text" id="custPincode" placeholder="6-Digit Pincode" pattern="[0-9]{6}" maxlength="6" required />
+            </div>
+            <div class="fk-field">
+              <label>Locality / Area / Town *</label>
+              <input type="text" id="custLocality" placeholder="e.g. Karempudi / Main Road" required />
+            </div>
+          </div>
+
+          <div class="fk-field">
+            <label>Flat, House No., Building, Company, Apartment *</label>
+            <input type="text" id="custHouse" placeholder="e.g. 4-119A, Near Pedda Maseedu" required />
+          </div>
+
+          <div class="fk-grid-2">
+            <div class="fk-field">
+              <label>City / District / Town *</label>
+              <input type="text" id="custCity" placeholder="e.g. Palnadu / Guntur" required />
+            </div>
+            <div class="fk-field">
+              <label>State *</label>
+              <select id="custState" required>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Other">Other State</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fk-grid-2">
+            <div class="fk-field">
+              <label>Landmark (Optional)</label>
+              <input type="text" id="custLandmark" placeholder="e.g. Opposite Water Tank" />
+            </div>
+            <div class="fk-field">
+              <label>Alternate Phone (Optional)</label>
+              <input type="tel" id="custAltPhone" placeholder="Alternate Mobile (Optional)" maxlength="10" />
+            </div>
+          </div>
+
+          <div class="fk-field">
+            <label>Address Type &amp; Payment</label>
+            <div class="fk-type-row">
+              <button type="button" class="fk-type-pill active" data-addr-type="Home">🏠 Home (All Day Delivery)</button>
+              <button type="button" class="fk-type-pill" data-addr-type="Work">🏢 Work (10 AM - 6 PM)</button>
+              <input type="hidden" id="custAddrType" value="Home" />
+            </div>
+          </div>
+
+          <div class="fk-field">
+            <label>Payment Mode</label>
+            <select id="custPaymentMethod">
+              <option value="COD">💵 Cash on Delivery (Pay at Doorstep)</option>
+              <option value="UPI">📱 UPI / PhonePe / GPay on Delivery</option>
+            </select>
+          </div>
+
+          <button type="submit" class="neon-cta-btn" id="placeOrderBtn">
+            Confirm &amp; Place Order
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDE MENU / MY ORDERS TRACKING & AUTH DRAWER -->
+  <div class="modal-backdrop hidden" id="menuModal">
+    <div class="drawer-card left-drawer">
+      <div class="modal-header">
+        <div>
+          <span class="modal-eyebrow">LEGACY WEAR K.P.D</span>
+          <h3 id="menuUserGreeting">Welcome to Legacy°</h3>
+        </div>
+        <button class="close-x" id="closeMenuBtn">✕</button>
+      </div>
+
+      <div class="auth-box" id="authBox">
+        <p class="auth-note">Sign in with Google to sync your bag, track live shipments, and rate drops.</p>
+        <button class="neon-cta-btn" id="googleSignInBtn">Continue with Google</button>
+        <button class="admin-cta-btn hidden" id="openAdminFromMenuBtn">⚡ Open Admin Control Desk</button>
+        <button class="outline-btn hidden" id="signOutBtn">Sign Out</button>
+      </div>
+
+      <div class="orders-section">
+        <div class="orders-section-head">
+          <h4>My Orders &amp; Live Tracking <span class="notification-dot inline-dot hidden" id="myOrdersDrawerDot"></span></h4>
+          <button type="button" class="sm-btn" id="refreshMyOrdersBtn">↻ Refresh</button>
+        </div>
+        <div id="myOrdersList" class="orders-list-box">
+          <p class="muted-text">Sign in to view and track your orders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL ADMIN CONTROL DESK MODAL -->
+  <div class="modal-backdrop hidden" id="adminModal">
+    <div class="modal-card admin-modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-eyebrow">LEGACY WEAR K.P.D MANAGEMENT</span>
+          <h3>Admin Control Desk</h3>
+        </div>
+        <button class="close-x" id="closeAdminBtn">✕</button>
+      </div>
+
+      <!-- Admin Navigation Tabs -->
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab active" data-tab="adminProductsTab">Products</button>
+        <button type="button" class="admin-tab" data-tab="adminSectionsTab">Sections</button>
+        <button type="button" class="admin-tab" data-tab="adminOrdersTab" style="position:relative;">
+          Orders Hub
+          <span class="notification-dot hidden" id="ordersHubDot"></span>
+        </button>
+      </div>
+
+      <!-- TAB 1: PRODUCTS MANAGEMENT -->
+      <div class="admin-tab-pane" id="adminProductsTab">
+        <form id="adminProductForm" class="admin-form-box">
+          <h4 id="productFormHeading">Add / Edit Product</h4>
+          <input type="hidden" id="editProductId" value="" />
+
+          <div class="admin-grid-2">
+            <input type="text" id="prodTitle" placeholder="Product Title (e.g. Red Embroidery Shirt)" required />
+            <select id="prodSectionSelect" required>
+              <option value="">Select Category Section</option>
+            </select>
+          </div>
+
+          <div class="admin-grid-2">
+            <input type="number" id="prodPrice" placeholder="Selling Price (₹)" required />
+            <input type="number" id="prodOriginalPrice" placeholder="Original MRP (₹ Optional)" />
+          </div>
+
+          <div class="upload-zone">
+            <label class="upload-label">
+              <span>📸 Tap to Upload Product Photos (Mobile Safe S3 Upload)</span>
+              <input type="file" id="prodImageFiles" accept="image/*" multiple />
+            </label>
+            <div id="uploadStatusText" class="upload-status">No photos uploaded yet.</div>
+            <div id="uploadedPhotosPreview" class="uploaded-thumbs-row"></div>
+          </div>
+
+          <div class="size-stock-grid">
+            <div><label>S</label><input type="number" id="stockS" value="5" min="0" /></div>
+            <div><label>M</label><input type="number" id="stockM" value="10" min="0" /></div>
+            <div><label>L</label><input type="number" id="stockL" value="10" min="0" /></div>
+            <div><label>XL</label><input type="number" id="stockXL" value="5" min="0" /></div>
+            <div><label>XXL</label><input type="number" id="stockXXL" value="5" min="0" /></div>
+          </div>
+
+          <div class="admin-checkbox-row">
+            <label><input type="checkbox" id="prodIsLatest" checked /> Show "NEW" Badge</label>
+            <label><input type="checkbox" id="prodIsAvailable" checked /> Available In Stock</label>
+          </div>
+
+          <div class="admin-form-actions">
+            <button type="submit" class="neon-cta-btn" id="saveProductBtn">Save Product</button>
+            <button type="button" class="outline-btn hidden" id="cancelEditProductBtn">Cancel Edit</button>
+          </div>
+        </form>
+
+        <h4 class="admin-subhead">Existing Catalog Products</h4>
+        <div id="adminProductsList" class="admin-list-container"></div>
+      </div>
+
+      <!-- TAB 2: SECTIONS MANAGEMENT -->
+      <div class="admin-tab-pane hidden" id="adminSectionsTab">
+        <form id="adminSectionForm" class="admin-form-box">
+          <h4>Create Category Section</h4>
+          <div class="admin-grid-2">
+            <input type="text" id="secTitle" placeholder="Section Name (e.g. Oversized T-Shirts)" required />
+            <input type="number" id="secOrder" placeholder="Display Order (1, 2, 3...)" value="1" />
+          </div>
+          <input type="text" id="secDesc" placeholder="Short description (Optional)" />
+          <button type="submit" class="neon-cta-btn">Add Section</button>
+        </form>
+
+        <h4 class="admin-subhead">Active Store Sections</h4>
+        <div id="adminSectionsList" class="admin-list-container"></div>
+      </div>
+
+      <!-- TAB 3: ALL CUSTOMER ORDERS HUB & LIVE SHIPMENT TRACKING CONTROL -->
+      <div class="admin-tab-pane hidden" id="adminOrdersTab">
+        <div class="orders-hub-header">
+          <div>
+            <h4>All Customer Orders &amp; Dispatch Control (IST)</h4>
+            <p class="muted-text">Change status dropdown to update live customer tracking.</p>
+          </div>
+          <button type="button" class="sm-btn" id="refreshAdminOrdersBtn">↻ Refresh Orders</button>
+        </div>
+        <div id="adminOrdersList" class="admin-list-container">
+          <p class="muted-text">Loading customer orders...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN ORDER CANCELLATION REASON MODAL -->
+  <div class="modal-backdrop hidden" id="cancelReasonModal">
+    <div class="modal-card" style="max-width: 420px;">
+      <div class="modal-header">
+        <div>
+          <span class="modal-eyebrow">ORDER MANAGEMENT</span>
+          <h3>Cancel Customer Order</h3>
+        </div>
+        <button class="close-x" id="closeCancelModalBtn">✕</button>
+      </div>
+      <form id="cancelReasonForm" class="cancel-reason-form">
+        <label>Reason for Cancellation (Sent to Customer):</label>
+        <textarea id="cancelReasonInput" rows="3" placeholder="e.g. Size out of stock, address incomplete, or cancelled on request..." required></textarea>
+        <button type="submit" class="neon-cta-btn danger-gradient">Confirm Cancellation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastBar" class="toast-bar hidden"></div>
+
+  <!-- Application Script -->
+  <script type="module" src="script.js"></script>
+  <!-- PRINTABLE TAX INVOICE TEMPLATE (Hidden until printed) -->
+<div id="invoicePrintTemplate" style="display:none; background:#fff; color:#000; padding:32px; font-family:'Plus Jakarta Sans',sans-serif; max-width:700px; margin:0 auto;">
+  <div style="display:flex; justify-content:space-between; border-bottom:2px solid #000; padding-bottom:16px; margin-bottom:20px;">
+    <div>
+      <h2 style="font-family:'Cinzel',serif; font-size:22px; font-weight:800; color:#d4af37;">LEGACY WEAR K.P.D</h2>
+      <p style="font-size:11px; color:#555;">Official Tax Invoice / Cash Memo</p>
+    </div>
+    <div style="text-align:right; font-size:11.5px;">
+      <strong id="invOrderId">Order #ORD_000</strong><br/>
+      <span id="invOrderDate">Date: 2026-10-17</span>
+    </div>
+  </div>
+  <div style="margin-bottom:20px; font-size:12px;">
+    <strong>Customer Details:</strong><br/>
+    <span id="invCustName">Name</span><br/>
+    <span id="invCustPhone">Phone</span><br/>
+    <span id="invCustAddress">Address</span>
+  </div>
+  <table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:20px;">
+    <thead>
+      <tr style="background:#f4f4f4; border-bottom:1px solid #ddd;">
+        <th style="text-align:left; padding:8px;">Item Description</th>
+        <th style="text-align:center; padding:8px;">Size</th>
+        <th style="text-align:right; padding:8px;">Price</th>
+      </tr>
+    </thead>
+    <tbody id="invItemsTableBody"></tbody>
+  </table>
+  <div style="text-align:right; font-size:14px; border-top:1px solid #000; padding-top:10px;">
+    <strong>Total Paid: <span id="invTotalAmount">₹0</span></strong>
+  </div>
+  <div style="text-align:center; margin-top:30px; font-size:10px; color:#777;">
+    Thank you for shopping with Legacy Wear K.P.D • Timeless Style. Lasting Legacy.
+  </div>
+</div>
+</body>
+</html>
